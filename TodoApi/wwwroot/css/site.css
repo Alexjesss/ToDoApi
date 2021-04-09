@@ -8,14 +8,45 @@ header {
     background-color: #545454;
 }
 
+h1{
+    margin: 25px auto;
+    width: 200px;
+    transform:translate(10px,10px);
+}
+
+h3 {
+    transform: translate(-10px,10px);
+    margin: 15px auto;
+    width: 20px;
+}
+
+form {
+    width: 200px;
+    margin: auto;
+    display:flex;
+}
+
 .headertext {
     color: white;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .textwrapper {
 display: inline-block;
 vertical-align: middle;
  
+}
+
+.topbar-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 img {
@@ -35,6 +66,7 @@ table {
     font-family: Arial, sans-serif;
     border: 1px solid;
     border-collapse: collapse;
+    margin: auto;
 }
 
 th {
@@ -45,4 +77,9 @@ th {
 td {
     border: 1px solid;
     padding: 5px;
+}
+
+p {
+    width: 70px;
+    transform: translate(621px,10px);
 }
