@@ -11,12 +11,13 @@ function getItems() {
 function addItem() {
     const addNameTextbox = document.getElementById('add-name');
     const addMovieTextbox = document.getElementById('add-movie');
+    const addDateTextbox = document.getElementById('add-date');
 
 
     const item = {
         name: addNameTextbox.value.trim(),
-        movie: addMovieTextbox.value.trim()
-        
+        movie: addMovieTextbox.value.trim(),
+        date: addDateTextbox.value.trim()
     };
 
     fetch(uri, {
@@ -46,6 +47,8 @@ function deleteItem(id) {
 function displayEditForm(id) {
     const item = todos.find(item => item.id === id);
     document.getElementById('edit-name').value = item.name;
+    document.getElementById('edit-movie').value = item.movie;
+    document.getElementById('edit-date').value = item.date;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('editForm').style.display = 'block';
 }
@@ -54,7 +57,9 @@ function updateItem() {
     const itemId = document.getElementById('edit-id').value;
     const item = {
         id: parseInt(itemId, 10),
-        name: document.getElementById('edit-name').value.trim()
+        name: document.getElementById('edit-name').value.trim(),
+        movie: document.getElementById('edit-movie').value.trim(),
+        date: document.getElementById('edit-date').value.trim()
     };
 
     fetch(`${uri}/${itemId}`, {
@@ -100,19 +105,23 @@ function _displayItems(data) {
 
         let tr = tBody.insertRow();
 
-        let td2 = tr.insertCell(0);
+        let td1 = tr.insertCell(0);
         let textNode = document.createTextNode(item.name);
-        td2.appendChild(textNode);
+        td1.appendChild(textNode);
 
-        let td02 = tr.insertCell(1);
-        let texxt = document.createTextNode(item.movie);
-        td02.appendChild(texxt);
+        let td2 = tr.insertCell(1);
+        let text = document.createTextNode(item.movie);
+        td2.appendChild(text);
 
         let td3 = tr.insertCell(2);
-        td3.appendChild(editButton);
+        let text2 = document.createTextNode(item.date);
+        td3.appendChild(text2);
 
         let td4 = tr.insertCell(3);
-        td4.appendChild(deleteButton);
+        td4.appendChild(editButton);
+
+        let td5 = tr.insertCell(4);
+        td5.appendChild(deleteButton);
     });
 
     todos = data;
