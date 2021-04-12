@@ -67,6 +67,8 @@ table {
     border: 1px solid;
     border-collapse: collapse;
     margin: auto;
+    width: 80% !important;
+    margin-top: 35px !important;
 }
 
 th {
@@ -82,4 +84,12 @@ td {
 p {
     width: 70px;
     transform: translate(621px,10px);
+}
+
+.inputfields {
+    margin: auto;
+    width: 100%;
+    display: inherit;
+    transform: translate(-176px, 12px);
+    ;
 }

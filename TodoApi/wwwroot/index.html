@@ -6,20 +6,28 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/site.css" />
 </head>
-<header>
-    <div class="wrapper">
-    <div class="topbar-wrapper">
-        <a href="https://becode.org/nl/"><img src="/images/becode.png" alt="Logo"></a>
-        <div class="textwrapper"><span class="headertext">In Becode we trust!</span></div>
-        </div></div></header>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+            <div class="container">
+                <div class="topbar-wrapper">
+                    <a href="https://becode.org/nl/"><img src="/images/becode.png" alt="Logo"></a>
+                    <div class="textwrapper"><span class="headertext">In Becode we trust!</span></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
     <h1>Dotnet API</h1>
     <h3>Add</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New Actor">
-        <input type="text" id="add-movie" placeholder="New Movie">
-        <input type="text" id="add-date" placeholder="New Date">
-        <input type="submit" value="Add">
+        <div class="inputfields">
+            <input type="text" id="add-name" placeholder="New Actor">
+            <input type="text" id="add-movie" placeholder="New Movie">
+            <input type="date" id="add-date" placeholder="New Date">
+            <input type="submit" value="Add">
+        </div>
     </form>
 
     <div id="editForm">
@@ -28,20 +36,20 @@
             <input type="hidden" id="edit-id">
             <input type="text" id="edit-name">
             <input type="text" id="edit-movie">
-            <input type="text" id="edit-date">
+            <input type="date" id="edit-date">
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
         </form>
     </div>
 
-    
+
 
     <table class="table-striped table">
         <thead>
             <tr>
                 <th colspan="5">Actor</th>
             </tr>
-            </thead>
+        </thead>
         <tbody id="todos"></tbody>
     </table>
 

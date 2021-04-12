@@ -11,15 +11,17 @@ function getItems() {
 function addItem() {
     const addNameTextbox = document.getElementById('add-name');
     const addMovieTextbox = document.getElementById('add-movie');
-    const addDateTextbox = document.getElementById('add-date');
+    console.log('test');
+    const addDate = document.getElementById('add-date');
+    console.log(addDate);
 
 
     const item = {
         name: addNameTextbox.value.trim(),
         movie: addMovieTextbox.value.trim(),
-        date: addDateTextbox.value.trim()
+        releasedate: addDate.value.trim()
     };
-
+    console.log(JSON.stringify(item));
     fetch(uri, {
         method: 'POST',
         headers: {
@@ -48,7 +50,7 @@ function displayEditForm(id) {
     const item = todos.find(item => item.id === id);
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-movie').value = item.movie;
-    document.getElementById('edit-date').value = item.date;
+    document.getElementById('edit-date').value = item.releasedate;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('editForm').style.display = 'block';
 }
@@ -59,7 +61,7 @@ function updateItem() {
         id: parseInt(itemId, 10),
         name: document.getElementById('edit-name').value.trim(),
         movie: document.getElementById('edit-movie').value.trim(),
-        date: document.getElementById('edit-date').value.trim()
+        releasedate: document.getElementById('edit-date').value.trim()
     };
 
     fetch(`${uri}/${itemId}`, {
@@ -114,8 +116,9 @@ function _displayItems(data) {
         td2.appendChild(text);
 
         let td3 = tr.insertCell(2);
-        let text2 = document.createTextNode(item.date);
+        let text2 = document.createTextNode(item.releasedate);
         td3.appendChild(text2);
+        
 
         let td4 = tr.insertCell(3);
         td4.appendChild(editButton);

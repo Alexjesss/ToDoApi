@@ -14,8 +14,6 @@ namespace TodoApi.Models
         {
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
-
         public DbSet<Actor> Actor { get; set; }
 
         public DbSet<Actrice> Actrice { get; set; }
