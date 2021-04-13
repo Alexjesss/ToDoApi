@@ -19,8 +19,9 @@ function addItem() {
     const item = {
         name: addNameTextbox.value.trim(),
         movie: addMovieTextbox.value.trim(),
-        releasedate: addDate.value.trim()
+        releaseDate: addDate.value.trim()
     };
+    console.log(addDate);
     console.log(JSON.stringify(item));
     fetch(uri, {
         method: 'POST',
@@ -50,7 +51,7 @@ function displayEditForm(id) {
     const item = todos.find(item => item.id === id);
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-movie').value = item.movie;
-    document.getElementById('edit-date').value = item.releasedate;
+    document.getElementById('edit-date').value = item.releaseDate;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('editForm').style.display = 'block';
 }
@@ -61,7 +62,7 @@ function updateItem() {
         id: parseInt(itemId, 10),
         name: document.getElementById('edit-name').value.trim(),
         movie: document.getElementById('edit-movie').value.trim(),
-        releasedate: document.getElementById('edit-date').value.trim()
+        releaseDate: document.getElementById('edit-date').value.trim()
     };
 
     fetch(`${uri}/${itemId}`, {
@@ -116,7 +117,7 @@ function _displayItems(data) {
         td2.appendChild(text);
 
         let td3 = tr.insertCell(2);
-        let text2 = document.createTextNode(item.releasedate);
+        let text2 = document.createTextNode(item.releaseDate);
         td3.appendChild(text2);
         
 

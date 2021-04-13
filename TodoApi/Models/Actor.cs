@@ -17,9 +17,7 @@ namespace TodoApi.Models
         [Required]
         public string Movie { get; set; }
 
-        [Display(Name = "Release Date")]
-        [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
 
     }
 }
