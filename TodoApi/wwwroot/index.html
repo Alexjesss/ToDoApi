@@ -20,7 +20,7 @@
 
 
     <h1>Dotnet API</h1>
-    <h3>Add</h3>
+    <h3>Actor</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
         <div class="inputfields">
             <input type="text" id="add-name" placeholder="New Actor" required>
@@ -33,12 +33,14 @@
     <div id="editForm">
         <h3>Edit</h3>
         <form action="javascript:void(0);" onsubmit="updateItem()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-name">
-            <input type="text" id="edit-movie">
-            <input type="date" id="edit-date">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            <div class="inputfields">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-name">
+                <input type="text" id="edit-movie">
+                <input type="date" id="edit-date">
+                <input type="submit" value="Save">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </div>
         </form>
     </div>
 
@@ -47,7 +49,10 @@
     <table class="table-striped table">
         <thead>
             <tr>
-                <th colspan="5">Actor</th>
+                <th colspan="1">Name</th>
+                <th colspan="1">Movie</th>
+                <th colspan="1">Release date</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody id="todos"></tbody>

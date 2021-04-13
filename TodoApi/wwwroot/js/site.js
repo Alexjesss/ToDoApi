@@ -11,9 +11,7 @@ function getItems() {
 function addItem() {
     const addNameTextbox = document.getElementById('add-name');
     const addMovieTextbox = document.getElementById('add-movie');
-    console.log('test');
     const addDate = document.getElementById('add-date');
-    console.log(addDate);
 
 
     const item = {
@@ -21,8 +19,6 @@ function addItem() {
         movie: addMovieTextbox.value.trim(),
         releaseDate: addDate.value.trim()
     };
-    console.log(addDate);
-    console.log(JSON.stringify(item));
     fetch(uri, {
         method: 'POST',
         headers: {
@@ -35,6 +31,8 @@ function addItem() {
         .then(() => {
             getItems();
             addNameTextbox.value = '';
+            addMovieTextbox.value = '';
+            addDate.value = '';
         })
         .catch(error => console.error('Unable to add item.', error));
 }
@@ -91,12 +89,12 @@ function _displayItems(data) {
     const tBody = document.getElementById('todos');
     tBody.innerHTML = '';
 
-    
+
 
     const button = document.createElement('button');
 
     data.forEach(item => {
-        
+
 
         let editButton = button.cloneNode(false);
         editButton.innerText = 'Edit';
@@ -119,7 +117,7 @@ function _displayItems(data) {
         let td3 = tr.insertCell(2);
         let text2 = document.createTextNode(item.releaseDate);
         td3.appendChild(text2);
-        
+
 
         let td4 = tr.insertCell(3);
         td4.appendChild(editButton);
